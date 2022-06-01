@@ -1,0 +1,29 @@
+{
+  "name": "vue-drag-gantt-chart",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.26.0",
+    "dayjs": "^1.10.7",
+    "element-ui": "^2.15.6",
+    "iscroll": "^5.2.0",
+    "lodash": "^4.17.21",
+    "mockjs": "^1.1.0",
+    "resize-observer-polyfill": "^1.5.1",
+    "v-contextmenu": "^2.9.0",
+    "vite-plugin-components": "^0.13.3",
+    "vue": "2.6.14",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "sass": "^1.49.8",
+    "vite": "^2.8.0",
+    "vite-plugin-vue2": "1.9.3",
+    "vue-template-compiler": "^2.6.14"
+  }
+}

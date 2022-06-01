@@ -1,0 +1,45 @@
+{
+  "rawIndex": 2,
+  "id": "JHR725ST",
+  "type": "🚄",
+  "speed": 88,
+  "name": "警官号",
+  "colorPair": {
+    "dark": "rgb(247, 167, 71,0.8)",
+    "light": "rgb(247, 167, 71,0.1)"
+  },
+  "gtArray": [
+    {
+      "id": "UM4366",
+      "passenger": 40,
+      "start": "Tue, 31 May 2022 21:00:28 GMT",
+      "end": "Wed, 01 Jun 2022 02:00:28 GMT",
+      "type": "🚄",
+      "parentId": "JHR725ST"
+    },
+    {
+      "id": "RA6062",
+      "passenger": 120,
+      "start": "Wed, 01 Jun 2022 06:00:28 GMT",
+      "end": "Wed, 01 Jun 2022 10:00:28 GMT",
+      "type": "🚄",
+      "parentId": "JHR725ST"
+    },
+    {
+      "id": "TR8476",
+      "passenger": 52,
+      "start": "Wed, 01 Jun 2022 15:00:28 GMT",
+      "end": "Wed, 01 Jun 2022 20:00:28 GMT",
+      "type": "🚄",
+      "parentId": "JHR725ST"
+    },
+    {
+      "id": "VX5715",
+      "passenger": 44,
+      "start": "Wed, 01 Jun 2022 23:00:28 GMT",
+      "end": "Thu, 02 Jun 2022 04:00:28 GMT",
+      "type": "🚄",
+      "parentId": "JHR725ST"
+    }
+  ]
+}

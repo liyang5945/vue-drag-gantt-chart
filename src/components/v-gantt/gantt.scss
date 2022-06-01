@@ -1,0 +1,246 @@
+$gray: #ccc;
+
+$font-gray:#666;
+
+.gantt {
+  &-chart {
+    will-change: transform;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+
+  &-container{
+    width: 100%;
+    height: 100%;
+  }
+
+  &-header {
+    display: flex;
+    background-color: #fff;
+    border-top: 1px solid $gray;
+    border-bottom: 1px solid $gray;
+    height: 60px;
+    &-title {
+      flex: none;
+      height: 60px;
+      padding: 15px 0;
+      color: #666;
+      text-align: center;
+      border-right: 1px solid $gray;
+    }
+    .date-control{
+      height: 30px;
+      line-height: 30px;
+      font-size: 14px;
+      text-align: center;
+      .btn-date-ctrl{
+        display: inline-block;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 2px 3px;
+        border: none;
+        background: none;
+      }
+    }
+    &-timeline {
+      overflow: hidden;
+    }
+    &-timeline-container{
+      &:before{
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 100%;
+        background-color: $gray;
+        position: absolute;
+        top: 0;
+        left: -1px;
+      }
+    }
+  }
+
+  &-body {
+    position: relative;
+  }
+
+  &-timeline {
+    position: relative;
+    text-align: center;
+    display: flex;
+
+    &-day {
+      overflow: hidden;
+      font-weight: bold;
+      color: $font-gray;
+      border-right: 1px solid #aaa;
+      border-bottom: 1px solid #ddd;
+    }
+
+    &-scale {
+      display: flex;
+      border-right: 1px solid #aaa;
+      &>div {
+        height: 100%;
+        font-size: 14px;
+        color: $font-gray;
+        border-right: 1px solid #ddd;
+        &:last-child{
+          border-right: none;
+        }
+      }
+    }
+
+    // 隐藏第一个时间节点，不然会只显示一半，不好看
+    &-block:first-child &-scale div:first-child {
+      visibility: hidden;
+    }
+  }
+
+  &-leftbar {
+    width: 100%;
+    background: #fff;
+    color: $font-gray;
+    font-size: 0.8rem;
+    position: relative;
+    &-container {
+      flex: none;
+      position: relative;
+      overflow: hidden;
+      background: #fff;
+      border-right: 1px solid $gray;
+      z-index: 100;
+      .left-scroll-wrapper {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+    .gannt-group-menu{
+      background-color: rgba(#408984,.8);
+      border-bottom: 1px solid $gray;
+      display: flex;
+      box-sizing: border-box;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      padding: 0 10px;
+      border-radius: 8px 0 0 8px;
+      align-items: center;
+      color: #ffffff;
+      .type-title{
+        font-size: 12px;
+        line-height: 16px;
+        flex-shrink: 0;
+      }
+      .btn-toggle{
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        flex-shrink: 0;
+        cursor: pointer;
+      }
+      .classify-tags{
+        flex: 1;
+      }
+      .classify-tag{
+        display: inline-block;
+        padding: 0 5px;
+        line-height: 20px;
+        height: 20px;
+        font-size: 14px;
+        color: #fff;
+        background-color: #3d847f;
+        text-align: center;
+      }
+  
+    }
+    .left-bar-wrapper{
+      position: relative;
+    }
+
+    &-item {
+      position: absolute;
+      width: 100%;
+    }
+
+    &-defalutItem {
+      width: 100%;
+      height: 100%;
+      outline: 1px solid $gray
+    }
+  }
+
+  &-table {
+    display: flex;
+    width: 100%;
+    height: 100%;
+  }
+
+  &-markline-area {
+    position: absolute;
+    z-index: 99;
+  }
+
+  &-markline {
+    position: absolute;
+    z-index: 100;
+    width: 2px;
+    height: 100vh;
+
+    &-label {
+      padding: 3px;
+      float: left;
+      color: #fff;
+      font-size: 0.7rem;
+    }
+  }
+
+  &-blocks {
+    background-color: #fff;
+    &-wrapper {
+      height: 100%;
+      overflow: hidden;
+      position: relative;
+      background-color: #f1f1f1;
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Chrome/Safari/Opera */
+      -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently 禁止鼠标拖动时 */
+    }
+  }
+
+  &-block {
+    &-container {
+      position: relative;
+      height: 100%;
+    }
+    &-top-space{
+      background-color: rgba(#408984,.8);
+      border-bottom: 1px solid $gray;
+    }
+    &-row-wrapper{
+      position: relative;
+    }
+    &-row{
+      width: 100%;
+      border-bottom: 1px solid $gray;
+      position: absolute;
+    }
+    &-item {
+      position: absolute;
+      height: 100%;
+    }
+    &-defaultBlock {
+      width: 100%;
+      height: 100%;
+      outline: 1px solid $gray;
+      background: $gray;
+    }
+  }
+}
