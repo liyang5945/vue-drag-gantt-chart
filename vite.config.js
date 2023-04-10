@@ -1,34 +1,34 @@
-import ViteComponents, {
-  ElementUiResolver,
-} from 'vite-plugin-components'
-const { createVuePlugin } = require("vite-plugin-vue2");
-import {resolve} from "path";
+import { defineConfig } from 'vite'
+import { fileURLToPath, URL } from 'node:url'
+import Components from 'unplugin-vue-components/vite'
+import { ElementUiResolver } from 'unplugin-vue-components/resolvers'
+import vue2 from '@vitejs/plugin-vue2'
 
-module.exports = {
+export default defineConfig({
   base: "./",
   plugins: [
-    createVuePlugin({
-      vueTemplateOptions: {
+    vue2({
+      template: {
         compilerOptions: {
-          preserveWhitespace: false,
-          // whitespace: "preserve"
-        }
-      }
+          preserveWhitespace: true,
+          whitespace: "preserve"
+        },
+      },
     }),
-    ViteComponents({
-      customComponentResolvers: [
+    Components({
+      resolvers: [
         ElementUiResolver({
-          importStyle: true
+          importStyle: false
         }),
       ]
     }),
   ],
   resolve: {
     alias: {
-      "@": resolve(__dirname, "src")
+      '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
   server: {
     port: 3001,
   }
-};
+})
